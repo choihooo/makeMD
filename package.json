@@ -11,15 +11,16 @@
   "categories": [
     "Other"
   ],
-  "activationEvents": [
-    "onCommand:makemd.makemd"
-  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "makemd.makemd",
+        "command": "makemd.makemdWithTitle",
         "title": "makeMd with title"
+      },
+      {
+        "command": "makemd.makemdWithError",
+        "title": "makeMd with error"
       }
     ]
   },
