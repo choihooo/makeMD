@@ -2,6 +2,8 @@
 
 이 확장은 GitHub Pages에 게시할 때 포스트 템플릿을 쉽게 생성할 수 있도록 도와줍니다.
 
+![Logo](images/logo.png)
+
 ## 설치 방법
 
 1. Visual Studio Code에서 [Extensions](https://marketplace.visualstudio.com/vscode) 패널을 열고 'makeMD'를 검색합니다.
