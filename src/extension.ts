@@ -1,34 +1,35 @@
 import * as vscode from "vscode";
-import { makemdWithTitle, makemdWithError, autoCommit } from "./commands";
+import { createTaskTemplate } from "./commands";
+import { openImageFileDialog } from "./commands";
+import { createMarkdownTemplate } from "./commands"; // 새로 추가된 명령어 import
 
+// 확장 활성화
 export function activate(context: vscode.ExtensionContext) {
-  let disposableWithTitle = vscode.commands.registerCommand(
-    "makemd.makemdWithTitle",
-    makemdWithTitle
+  // TIL 템플릿 생성 명령 등록
+  let disposableCreateTaskTemplate = vscode.commands.registerCommand(
+    "makemd.createTaskTemplate",
+    createTaskTemplate
   );
+  context.subscriptions.push(disposableCreateTaskTemplate);
 
-  let disposableWithError = vscode.commands.registerCommand(
-    "makemd.makemdWithError",
-    makemdWithError
-  );
-
-  let disposableAutoCommit = vscode.commands.registerCommand(
-    "makemd.autoCommit",
-    autoCommit
-  );
-
-  context.subscriptions.push(disposableAutoCommit);
-  context.subscriptions.push(disposableWithTitle);
-  context.subscriptions.push(disposableWithError);
-
-  vscode.workspace.onDidSaveTextDocument((document) => {
-    if (
-      document.fileName.endsWith(".md") ||
-      document.fileName.match(/\.(jpg|jpeg|png|gif)$/)
-    ) {
-      autoCommit();
+  // 이미지 선택 및 삽입 기능 등록
+  let disposableSelectImage = vscode.commands.registerCommand(
+    "makemd.selectAndInsertImage",
+    () => {
+      openImageFileDialog();
     }
-  });
+  );
+  context.subscriptions.push(disposableSelectImage);
+
+  // 마크다운 파일 생성 기능 등록 (새로운 명령어)
+  let disposableCreateMarkdown = vscode.commands.registerCommand(
+    "makemd.createMarkdownFile",
+    () => {
+      createMarkdownTemplate();
+    }
+  );
+  context.subscriptions.push(disposableCreateMarkdown);
 }
 
+// 확장 비활성화
 export function deactivate() {}

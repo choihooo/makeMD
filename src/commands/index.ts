@@ -1,3 +1,3 @@
-export { makemdWithTitle } from "./makemdWithTitle";
-export { makemdWithError } from "./makemdWithError";
-export { autoCommit } from "./autoCommit";
+export * from "./insertImageIntoMarkdown";
+export { createTaskTemplate } from "./createTaskTemplate";
+export * from "./createMarkdown";

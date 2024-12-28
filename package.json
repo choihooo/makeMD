@@ -9,9 +9,7 @@
     "vscode": "^1.91.0"
   },
   "activationEvents": [
-    "onCommand:makemd.makemdWithTitle",
-    "onCommand:makemd.makemdWithError",
-    "onCommand:makemd.autoCommit"
+    "onCommand:makemd.createTaskTemplate"
   ],
   "categories": [
     "Other"
@@ -20,16 +18,19 @@
   "contributes": {
     "commands": [
       {
-        "command": "makemd.makemdWithTitle",
-        "title": "makeMd with title"
+        "command": "makemd.createTaskTemplate",
+        "title": "Create Task Template",
+        "category": "makeMD"
       },
       {
-        "command": "makemd.makemdWithError",
-        "title": "makeMd with error"
+        "command": "makemd.selectAndInsertImage",
+        "title": "이미지 선택 창 열기",
+        "category": "makeMD"
       },
       {
-        "command": "makemd.autoCommit",
-        "title": "Auto Commit and Push"
+        "command": "makemd.createMarkdownFile",
+        "title": "새 마크다운 파일 생성",
+        "category": "makeMD"
       }
     ]
   },
