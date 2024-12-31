@@ -1,0 +1,17 @@
+[
+  {
+    "key": "ctrl+alt+y",
+    "command": "extension.highlightYellow",
+    "when": "editorLangId == markdown"
+  },
+  {
+    "key": "ctrl+alt+b",
+    "command": "extension.highlightBlue",
+    "when": "editorLangId == markdown"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "extension.highlightRed",
+    "when": "editorLangId == markdown"
+  }
+]

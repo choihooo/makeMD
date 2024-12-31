@@ -2,13 +2,16 @@
   "name": "makemd",
   "displayName": "makeMD",
   "description": "It makes it easy to create a post template when posting on GitHub Pages.",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "license": "MIT",
   "publisher": "hooo",
   "engines": {
     "vscode": "^1.91.0"
   },
   "activationEvents": [
+    "onCommand:extension.highlightYellow",
+    "onCommand:extension.highlightBlue",
+    "onCommand:extension.highlightRed",
     "onCommand:makemd.createTaskTemplate"
   ],
   "categories": [
@@ -19,7 +22,7 @@
     "commands": [
       {
         "command": "makemd.createTaskTemplate",
-        "title": "Create Task Template",
+        "title": "새 TIL 파일 생성",
         "category": "makeMD"
       },
       {
@@ -30,6 +33,21 @@
       {
         "command": "makemd.createMarkdownFile",
         "title": "새 마크다운 파일 생성",
+        "category": "makeMD"
+      },
+      {
+        "command": "extension.highlightYellow",
+        "title": "노랑 형광펜",
+        "category": "makeMD"
+      },
+      {
+        "command": "extension.highlightBlue",
+        "title": "파랑 형광펜",
+        "category": "makeMD"
+      },
+      {
+        "command": "extension.highlightRed",
+        "title": "빨강 형광펜",
         "category": "makeMD"
       }
     ]

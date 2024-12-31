@@ -2,6 +2,7 @@ import * as vscode from "vscode";
 import { createTaskTemplate } from "./commands";
 import { openImageFileDialog } from "./commands";
 import { createMarkdownTemplate } from "./commands"; // 새로 추가된 명령어 import
+import { registerCommands } from "./commands/index";
 
 // 확장 활성화
 export function activate(context: vscode.ExtensionContext) {
@@ -29,6 +30,8 @@ export function activate(context: vscode.ExtensionContext) {
     }
   );
   context.subscriptions.push(disposableCreateMarkdown);
+
+  registerCommands(context);
 }
 
 // 확장 비활성화
